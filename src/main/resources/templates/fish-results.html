@@ -33,7 +33,8 @@
                 <h4 style="color: maroon">Bait</h4>
                 <p><b>Bait Name:</b> <span th:text=" ${summary.biggestCaughtFish.baitDto.baitName}"></span></p>
                 <p><b>Bait Type:</b> <span th:text="${summary.biggestCaughtFish.baitDto.baitSize}"></span></p>
-                <p><b>Bait Type:</b> <span th:text="${summary.biggestCaughtFish.baitDto.baitImageUrl}"></span></p>
+                <img class="img-fluid rounded-3 mb-3" th:src=" ${summary.biggestCaughtFish.baitDto.baitImageUrl}"
+                     alt="Fish Image" width="300px" height="300px"/>
 
                 <h4 style="color: maroon">Location</h4>
                 <p><b>Country:</b> <span th:text=" ${summary.biggestCaughtFish.locationDto.country}"></span></p>

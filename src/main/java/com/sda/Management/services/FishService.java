@@ -10,7 +10,7 @@ public interface FishService {
 
     FishDto createFish(FishDto fishDto);
 
-   List<FishDto> getAllFishes();
+    List<FishDto> getAllFishes();
 
     FishDto getFishById(Long fishId);
 

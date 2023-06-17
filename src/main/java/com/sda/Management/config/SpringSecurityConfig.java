@@ -39,16 +39,18 @@ public class SpringSecurityConfig {
                 .authorizeHttpRequests((authorize) ->
                         authorize
                                 .dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
-                                .requestMatchers("/","/css/**","/js/**","/login","/fish/list","/registration","/registration/**")
+                                .requestMatchers("/","/css/**","/js/**","/login","/registration","/registration/**")
                                 .permitAll()
-                                .requestMatchers("/users").hasAuthority("ADMIN")
                                 .requestMatchers("/fish/**").authenticated()
+                                .requestMatchers("fish/list").authenticated()
+                                .requestMatchers("/users").authenticated()
+                                .requestMatchers("/fish/home").authenticated()
 
                 ).formLogin(
                         form -> form
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/fish/list")
+                                .defaultSuccessUrl("/fish/home?success=true")
                                 .failureUrl("/login?error=true")
                                 .permitAll()
                 ).logout(

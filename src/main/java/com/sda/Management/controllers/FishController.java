@@ -23,6 +23,11 @@ public class FishController {
         this.fishService = fishService;
     }
 
+    @GetMapping("/fish/home")
+    public String homepage() {
+        return "fish-home";
+    }
+
     @GetMapping("/fish/list")
     public String getListOfFishes(Model model) {
         List<FishDto> fishDtoList = fishService.getAllFishes();

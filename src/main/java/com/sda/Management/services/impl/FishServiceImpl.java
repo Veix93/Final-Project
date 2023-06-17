@@ -69,7 +69,6 @@ public class FishServiceImpl implements FishService {
         fish.setBait(bait);
         fish.setLocation(location);
         fish.setWeather(weather);
-
         Fish newFish = fishRepository.save(fish);
 
         return fishMapper.fishToDto(newFish);

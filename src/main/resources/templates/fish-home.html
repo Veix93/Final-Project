@@ -1,0 +1,47 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+
+    <section layout:fragment="body" class="py-5">
+        <div class="container px-5 my-5">
+            <div class="text-center mb-5">
+                <h4 class="text-center">You have successfully logged in !</h4>
+                <img src="https://media.tenor.com/GYl8eU6xAacAAAAC/emoji-thumbs-up.gif" alt="Thumbs up" width="300px"
+                     height="300px"/>
+                <br/>
+                <p class="lead fw-normal text-muted mb-0">Feel free to start using our App</p>
+            </div>
+        </div>
+
+    </section>
+</main>
+</body>
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <h5 class="display-6 fw-bolder mb-6">Let's go fishing together</h5>
+        <br/>
+        <a class="btn btn-lg btn-primary" href="#!">Contact us</a>
+    </div>
+</section>
+
+<footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto">
+                <div class="small m-0 text-white">Copyright &copy; Your Website 2023</div>
+            </div>
+            <div class="col-auto">
+                <a class="link-light small" href="#!">Privacy</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Terms</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
