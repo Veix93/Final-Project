@@ -6,6 +6,7 @@ see how many fishes they have caught so far, and track various details such as b
 
 ## Table of Contents
 
+- [Project status](#projectstatus)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
@@ -13,13 +14,24 @@ see how many fishes they have caught so far, and track various details such as b
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
 
+## Project Status
+
+This project is currently under development. While it provides basic functionality for managing fishing records, there are plans to add more features and improvements in the future. Some of the planned enhancements include:
+
+- Adding comprehensive tests for improved test coverage.
+- Implementing additional validations to ensure data integrity and input correctness.
+- Introducing an administrative role that has permissions to add, update, and delete users.
+- Restricting user access so that each user can only view and manage their own fishing records.
+
+Please note that the project is a work in progress, and contributions or suggestions are welcome. Feel free to open issues or submit pull requests for any improvements or bug fixes you'd like to contribute.
+
 ## Installation
 
 1. Clone the repository to your local machine.
 2. Navigate to the project directory.
 3. Install the required dependencies using the package manager of your choice (e.g., npm, yarn).
 4. Configure the database connection in the application properties file.
-5. Run the applicati
+5. Run the application
 
 ## Usage
 
@@ -31,7 +43,7 @@ see how many fishes they have caught so far, and track various details such as b
    - Update a fish entry: Modify the details of an existing fish entry, including fish name, weight, image, bait information, location, and weather conditions.
    - Delete a fish entry: Remove a fish entry from your records.
    - View the biggest caught fish overall: See the largest fish caught so far.
-   - See the total number of fish caught: Check the total count of fish caught by you.
+   - See the total number of fish caught: Check the total count of fish caught by all users.
 
 ## Features
 
