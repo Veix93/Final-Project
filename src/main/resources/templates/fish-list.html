@@ -1,0 +1,54 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List of fishes</title>
+</head>
+<body class="d-flex flex-column">
+    <section layout:fragment="body" class="py-5">
+        <div class="container">
+            <div class="row">
+                <h3 class="fw-bolder"> Caught Fishes </h3>
+            </div>
+            <br />
+            <br />
+            <div>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Fish Name</th>
+                        <th>Fish Weight</th>
+                        <th>Country</th>
+                        <th>Town</th>
+                        <th>Water Body</th>
+                        <th>Water Body Name</th>
+                        <th>Fishing Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="fish: ${fishDtoList}">
+                        <td th:text="${fish.fishName}"></td>
+                        <td th:text="${fish.fishWeight} + ' kg'"></td>
+                        <td th:text="${fish.locationDto.country}"></td>
+                        <td th:text="${fish.locationDto.town}"></td>
+                        <td th:text="${fish.locationDto.waterBody.displayWaterBody}"></td>
+                        <td th:text="${fish.locationDto.waterBodyName}"></td>
+                        <td th:text="${#dates.format(fish.locationDto.fishingDate, 'yyyy-MM-dd')}"></td>
+
+                        <td>
+                            <a class="btn btn-success" th:href="@{/fish/{fishId}(fishId=${fish.fishId})}">View</a>
+                            <a class="btn btn-primary" th:href="@{/fish/{fishId}/update(fishId=${fish.fishId})}">Update</a>
+                            <a class="btn btn-danger" th:href="@{/fish/{fishId}/delete(fishId=${fish.fishId})}">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

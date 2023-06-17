@@ -1,0 +1,152 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Update fish information</title>
+</head>
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+    <section layout:fragment="body" class="py-5">
+        <div class="container">
+            <div class="row">
+                <h3 class="fw-bolder"> Update Fish </h3>
+            </div>
+            <br />
+            <form class="row g-3" role="form" method="post" th:action="@{/fish/{fishId}/update(fishId=${updatedFish.fishId})}" th:object="${updatedFish}">
+                <input type="hidden" th:field="*{fishId}">
+                <div class="col-md-6">
+                    <label for="fishName" class="form-label">Fish name</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="fishName"
+                            th:field="*{fishName}"
+                            placeholder="Pike, Salmon">
+                </div>
+                <div class="col-md-6">
+                    <label for="fishWeight" class="form-label">Fish weight</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="fishWeight"
+                            th:field="*{fishWeight}"
+                            step="0.1">
+                </div>
+                <div class="col-12">
+                    <label for="fishImageUrl" class="form-label">Fish image url</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="fishImageUrl"
+                            th:field="*{fishImageUrl}"/>
+
+                </div>
+                <div class="col-12">
+                    <label for="baitName" class="form-label">Bait name</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="baitName"
+                            th:field="*{baitDto.baitName}"
+                            placeholder="spinner, spoon, soft bait, hard bait"/>
+                </div>
+                <div class="col-md-6">
+                    <label for="baitSize" class="form-label">Bait size</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="baitSize"
+                            th:field="*{baitDto.baitSize}"
+                            placeholder="Small (2 cm)"/>
+                </div>
+                <div class="col-12">
+                    <label for="BaitImageUrl" class="form-label">Bait image url</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            th:field="*{baitDto.baitImageUrl}"
+                            id="BaitImageUrl"/>
+                </div>
+                <div class="col-12">
+                    <label for="country" class="form-label">Country</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="country"
+                            th:field="*{locationDto.country}"/>
+
+                </div>
+                <div class="col-12">
+                    <label for="town" class="form-label">Town</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="town"
+                            th:field="*{locationDto.town}"/>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="waterBody" class="form-label">Water body</label>
+                    <select id="waterBody" th:field="*{locationDto.waterBody}" class="form-select" required="required">
+                        <option value="">-- Choose water body --</option>
+                        <option th:each="waterBody : ${T(com.sda.Management.models.fishingDetails.WaterBody).values()}"
+                                th:value="${waterBody}" th:text="${waterBody}"></option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="waterBodyName" class="form-label">Water body name</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="waterBodyName"
+                            th:field="*{locationDto.waterBodyName}"
+                            placeholder="Emajõgi, Peipsi järv"/>
+                </div>
+                <div class="col-12">
+                    <label for="fishingDate" class="form-label">Fishing date</label>
+                    <input
+                            type="date"
+                            class="form-control"
+                            id="fishingDate"
+                            th:field="*{locationDto.fishingDate}"
+                            placeholder="yyyy-mm-dd"/>
+                </div>
+                <div class="col-12">
+                    <label for="airTemperature" class="form-label">Air temperature</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="airTemperature"
+                            th:field="*{weatherDto.airTemperature}"
+                            placeholder="17"/>
+                </div>
+                <div class="col-md-4">
+                    <label for="season" class="form-label">Season</label>
+                    <select id="season" th:field="*{weatherDto.season}" class="form-select" required="required">
+                        <option value="">-- Choose season --</option>
+                        <option th:each="season : ${T(com.sda.Management.models.fishingDetails.Season).values()}"
+                                th:value="${season}" th:text="${season}"></option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="weatherDescription" class="form-label">Weather description</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="weatherDescription"
+                            th:field="*{weatherDto.weatherDescription}"
+                            placeholder="Sunny, Cloudy, Rainy, Windy"/>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Update fish</button>
+
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+</body>
+</html>

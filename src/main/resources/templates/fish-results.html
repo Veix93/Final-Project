@@ -1,0 +1,69 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+
+<body class="d-flex flex-column">
+
+<section layout:fragment="body" class="py-5">
+    <div class="container">
+        <div class="row">
+            <h3 class="fw-bolder"> Biggest caught fish & Total amount </h3>
+        </div>
+        <br/>
+        <div class="text-info text-center mb-3 text-capitalize counter "
+             style="font-family: 'David CLM',serif; border: 10px solid black; padding: 10px; float: right;">
+            <h2 style="color: forestgreen">
+                <strong><span th:text="${summary.totalFishAmount}"></span> fish caught in total</strong>
+            </h2>
+        </div>
+
+        <div class="row gx-5" >
+            <div class="position-relative mb-5">
+                <p><b>Fish Name:</b> <span th:text=" ${summary.biggestCaughtFish.fishName}"></span></p>
+                <p><b>Fish Weight:</b> <span th:text=" ${summary.biggestCaughtFish.fishWeight}"></span> kg</p>
+                <img class="img-fluid rounded-3 mb-3" th:src=" ${summary.biggestCaughtFish.fishImageUrl}"
+                     alt="Fish Image" width="300px" height="300px"/>
+
+                <h4 style="color: maroon">Bait</h4>
+                <p><b>Bait Name:</b> <span th:text=" ${summary.biggestCaughtFish.baitDto.baitName}"></span></p>
+                <p><b>Bait Type:</b> <span th:text="${summary.biggestCaughtFish.baitDto.baitSize}"></span></p>
+                <p><b>Bait Type:</b> <span th:text="${summary.biggestCaughtFish.baitDto.baitImageUrl}"></span></p>
+
+                <h4 style="color: maroon">Location</h4>
+                <p><b>Country:</b> <span th:text=" ${summary.biggestCaughtFish.locationDto.country}"></span></p>
+                <p><b>Town:</b> <span th:text=" ${summary.biggestCaughtFish.locationDto.town}"></span></p>
+                <p><b>Water Body:</b> <span th:text=" ${summary.biggestCaughtFish.locationDto.waterBody}"></span></p>
+                <p><b>Water Body Name:</b> <span
+                        th:text=" ${summary.biggestCaughtFish.locationDto.waterBodyName}"></span>
+                </p>
+                <p><b>Fishing Date:</b> <span
+                        th:text=" ${#dates.format(summary.biggestCaughtFish.locationDto.fishingDate, 'yyyy-MM-dd')}"></span>
+                </p>
+
+                <h4 style="color: maroon">Weather</h4>
+                <p><b>Air Temperature:</b> <span
+                        th:text=" ${summary.biggestCaughtFish.weatherDto.airTemperature}"></span> °C </p>
+                <p><b>Season:</b><span th:text=" ${summary.biggestCaughtFish.weatherDto.season}"></span></p>
+                <p><b>Weather Description:</b> <span
+                        th:text=" ${summary.biggestCaughtFish.weatherDto.weatherDescription}"></span></p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
