@@ -9,6 +9,8 @@ see how many fishes they have caught so far, and track various details such as b
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+- [Technologies](#technologies)
+- [Dependencies](#dependencies)
 - [Contributing](#contributing)
 
 ## Installation
@@ -40,6 +42,30 @@ see how many fishes they have caught so far, and track various details such as b
 - Capture weather details such as air temperature, season, and weather description.
 - Display the biggest caught fish overall.
 - Show the total number of fish caught so far.
+
+## Technologies
+
+The Fishing Management System is built using the following technologies and tools:
+
+- Java
+- Spring Boot
+- Spring Security
+- Thymeleaf
+- Bootstrap
+- Intellij IDEA (IDE)
+
+- ## Dependencies
+
+- Spring Boot Data JPA
+- Spring Boot Security
+- Spring Boot Thymeleaf
+- Thymeleaf Layout Dialect
+- Snakeyaml
+- Spring Boot Validation
+- Spring Boot Web
+- Thymeleaf Extras Spring Security
+- MySQL Connector/J
+- Lombok
 
 ## Contributing
 
